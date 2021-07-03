@@ -1,3 +1,48 @@
+# Main Info
+
+https://degenerative.finance/asset/ugas
+
+https://github.com/opendao-protocols/UMIPs/pull/1/files
+
+https://discourse.umaproject.org/t/add-polygontvl-and-polygontvlinv-as-a-supported-price-identifiers/1175/2
+
+https://kovan.etherscan.io/address/0xc4e494924b32c0bA008e9fEB5Cf273301FBDd9b9
+
+Contract Address: 0xc4e494924b32c0bA008e9fEB5Cf273301FBDd9b9
+
+EMP Deployment Details
+
+Synthetic name: uPolygonInvTVL
+
+Synthetic symbol: UPIT
+
+Expiration date: 30/12/2021, 00:00:00
+
+Collateral address: 0xe22da380ee6B445bb8273C81944ADEB6E8450422
+
+Price identifier: PolygonTVLinv
+
+Collateral requirement: 150 %
+
+Minimum sponsor tokens: 100
+
+Liquidation liveness: 7200
+
+Withdrawal liveness: 7200
+
+Dispute bond percentage: 10 %
+
+Sponsor dispute reward percentage: 5 %
+
+Disputer dispute reward percentage: 20 %
+
+Financial product library address: 0x0000000000000000000000000000000000000000
+
+Etherscan:
+
+https://kovan.etherscan.io/tx/0x19fe926c6a8fac364d7e95be28f2d83cdde6d10cc00e3fd369330040c3334baf
+
+
 # Welcome to Scaffold-eth
 Scaffold-eth is everything you need to get started building decentralized applications on Ethereum! 🚀
 
