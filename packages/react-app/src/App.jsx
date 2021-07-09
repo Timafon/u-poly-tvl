@@ -22,6 +22,7 @@ import {
 // import Hints from "./Hints";
 import { ExampleUI, Hints, Subgraph } from "./views";
 import { UPolyTVL } from "./views/UPolyTVL";
+import { LSP } from "./views/LSP/LSP";
 
 const { ethers } = require("ethers");
 /*
@@ -351,6 +352,16 @@ function App(props) {
       {networkDisplay}
       <BrowserRouter>
         <Menu style={{ textAlign: "center" }} selectedKeys={[route]} mode="horizontal">
+          <Menu.Item key="/lsp">
+            <Link
+              onClick={() => {
+                setRoute("/lsp");
+              }}
+              to="/lsp"
+            >
+              LSP
+            </Link>
+          </Menu.Item>
           <Menu.Item key="/poly">
             <Link
               onClick={() => {
@@ -414,6 +425,9 @@ function App(props) {
         </Menu>
 
         <Switch>
+          <Route path="/lsp">
+            <LSP address={address} signer={userSigner} provider={localProvider} />
+          </Route>
           <Route path="/poly">
             <UPolyTVL address={address} signer={userSigner} />
           </Route>
