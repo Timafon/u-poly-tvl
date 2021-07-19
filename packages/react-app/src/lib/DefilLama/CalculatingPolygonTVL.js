@@ -19,7 +19,7 @@ export async function calculatePolyTvl(_, block) {
   const balances = {
     [etherAddress]: (await getBalance({ target: posEtherPredicate, block })).output,
   };
-
+  console.log("logs balances: ", balances);
   // -- Attempt to calculate TVL from mapped POS tokens
   const posTokens = [{ target: maticToken, params: stakeManager }];
 
@@ -87,7 +87,7 @@ export async function calculatePolyTvl(_, block) {
 
   await sumMultiBalanceOf(balances, lockedPlasmaBalances);
   // -- Done with Plasma tokens
-
+  console.log("logs balances: ", balances);
   return balances;
 }
 

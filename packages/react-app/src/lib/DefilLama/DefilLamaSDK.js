@@ -91,7 +91,7 @@ const providers = {
   polygon: new ethers.providers.StaticJsonRpcProvider(
     process.env.POLYGON_RPC !== null && process.env.POLYGON_RPC !== undefined
       ? process.env.POLYGON_RPC
-      : "https://rpc-mainnet.maticvigil.com/",
+      : "https://rpc-mainnet.matic.network",
     {
       name: "polygon",
       chainId: 137,
@@ -212,7 +212,7 @@ function resolveABI(providedAbi) {
   };
 }
 
-export function getProvider(chain = "ethereum") {
+export function getProvider(chain) {
   return providers[chain];
 }
 
@@ -436,7 +436,10 @@ export function handleDecimals(num, decimals) {
 
 // getBalance
 export async function getBalance(params) {
-  const balance = await getProvider("polygon").getBalance(params.target, params.block);
+  const provider = providers.polygon;
+  console.log("logs provider: ", provider);
+  console.log("logs params: ", params);
+  const balance = await provider.getBalance(params.target, params.block);
   return {
     output: handleDecimals(balance, params.decimals),
   };

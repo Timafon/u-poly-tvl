@@ -1,5 +1,6 @@
 import React from "react";
 import { ethers } from "ethers";
+import { Button } from "antd";
 import { calculatePolyTvl } from "../../lib/DefilLama/CalculatingPolygonTVL";
 
 // https://docs.umaproject.org/synthetic-tokens/long-short-pair
@@ -10,7 +11,7 @@ import { calculatePolyTvl } from "../../lib/DefilLama/CalculatingPolygonTVL";
 
 export function LSP({ address, signer, provider }) {
   const [tvl, setTvl] = React.useState("loading...");
-  React.useEffect(() => {
+  const calculateTvl = React.useCallback(() => {
     async function calcLsp() {
       const latestBlock = await provider.getBlockNumber();
       const _tvl = await calculatePolyTvl(null, latestBlock);
@@ -19,12 +20,13 @@ export function LSP({ address, signer, provider }) {
     }
 
     calcLsp();
-  }, []);
+  }, [provider]);
 
   return (
     <div>
       <div>LSP contract</div>
-      <div>Polygon TVL: ${tvl}</div>
+      <div>Polygon TVL: ${JSON.stringify(tvl)}</div>
+      <Button onClick={calculateTvl}>Calc</Button>
     </div>
   );
 }
